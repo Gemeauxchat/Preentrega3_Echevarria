@@ -1,0 +1,53 @@
+.general__layout{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-areas:
+    "head"
+    "navigator"
+    "main"
+    "footer"
+    ;
+}
+
+/*Responsiveness*/
+
+@media (max-width:480px){
+    .general_layout{
+        grid-template-rows: 72px 108px auto 60px;
+    }
+}
+
+@media (min-width:481px) and (max-width:700px){
+    .general_layout{
+        grid-template-rows: 76px 114px auto 60px;
+    }
+}
+
+@media (min-width:701px){
+    .general_layout{
+        grid-template-rows: 80px 120px auto 60px;    
+    }
+}
+
+/*Grid areas elements*/
+
+.header__element{
+    grid-area: head;
+}
+
+.nav__element{
+    grid-area: navigator;
+    background-color:rgb(65,7,108);
+
+}
+
+.main__content--index, .main__content--nosotros, .main__content--services, .main__content--contacto{
+    grid-area: main;
+
+
+}
+
+.footer__element{
+    grid-area: footer;
+}

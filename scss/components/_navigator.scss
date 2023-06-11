@@ -1,0 +1,23 @@
+.navigator__ul{
+    padding:5% 0% 5px 0px;
+    display:flex;
+    justify-content: space-evenly;
+    margin-left:5%;
+    margin-right:5%;
+    z-index:2;
+
+    li{
+        font-family: manrope;
+        list-style: none;
+        
+        a{
+            color: rgb(211, 204, 204);
+            text-decoration: none;
+        }
+    }
+       
+}
+
+nav ul li a:hover{
+    color: rgb(136, 130, 130);
+}

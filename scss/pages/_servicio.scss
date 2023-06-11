@@ -1,0 +1,70 @@
+@media (max-width:800px){
+    .services__main{
+        display:grid;
+        grid-template-areas: 
+        "serv-title"
+        "headphones"
+        "serv-p1"
+        "serv-p2"
+        "serv-p3"
+        "serv-p4"
+        ;
+
+    }
+}
+
+@media (min-width:801px)and (max-width:1200px){
+    .services__main{
+        display:grid;
+        grid-template-areas: 
+        "serv-title serv-title"
+        "headphones headphones"
+        "serv-p1 serv-p2"
+        "serv-p3 serv-p4"
+        ;
+    }
+}
+
+@media (min-width:1201px){
+    .services__main{
+        display:grid;
+        grid-template-areas: 
+        "serv-title serv-title headphones"
+        "serv-p1 serv-p2 headphones"
+        "serv-p3 serv-p4 headphones"
+        ;
+        grid-template-columns: 30% 30% 40%;
+    }
+}
+
+
+.services__main--title{
+    grid-area: serv-title;
+    justify-self: center;
+    padding-top: 10px;
+}
+
+.services__main--p1{
+    grid-area: serv-p1;
+    padding:20%;
+}
+.services__main--p2{
+    grid-area: serv-p2;
+    padding:20%;
+
+}
+.services__main--p3{
+    grid-area: serv-p3;
+    padding:20%;
+
+}
+.services__main--p4{
+    grid-area: serv-p4;
+    padding:20%;
+
+}
+.services__headphones--pic{
+    grid-area:headphones;
+    padding:20%;
+    transform: rotate(-8deg);
+}   

@@ -1,0 +1,703 @@
+@charset "UTF-8";
+/*Resets*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/*Fonts*/
+/*Layout*/
+.general__layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "head" "navigator" "main" "footer";
+}
+
+/*Responsiveness*/
+@media (max-width: 480px) {
+  .general_layout {
+    grid-template-rows: 72px 108px auto 60px;
+  }
+}
+@media (min-width: 481px) and (max-width: 700px) {
+  .general_layout {
+    grid-template-rows: 76px 114px auto 60px;
+  }
+}
+@media (min-width: 701px) {
+  .general_layout {
+    grid-template-rows: 80px 120px auto 60px;
+  }
+}
+/*Grid areas elements*/
+.header__element {
+  grid-area: head;
+}
+
+.nav__element {
+  grid-area: navigator;
+  background-color: rgb(65, 7, 108);
+}
+
+.main__content--index, .main__content--nosotros, .main__content--services, .main__content--contacto {
+  grid-area: main;
+}
+
+.footer__element {
+  grid-area: footer;
+}
+
+/*Header element- Verify header's menu icon displays in smaller viewports*/
+.header__element {
+  display: flex;
+  align-items: center;
+  height: 80px; /*nº px*/
+  position: sticky;
+}
+
+.header__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: rgb(22, 4, 76);
+}
+
+.logo__container {
+  width: 120px;
+  height: 80px;
+}
+
+.header__logo {
+  width: 120px;
+  height: 80px;
+}
+
+.menu__container {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 5px;
+}
+
+.menu__icon {
+  width: 60px;
+  height: 60px;
+}
+
+.menu__dropdown-content {
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.menu__dropdown-content a {
+  overflow: hidden;
+  color: rgb(22, 4, 76);
+  padding: 18px 35%;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.menu__dropdown-content a:hover {
+  background-color: rgb(211, 204, 204);
+}
+
+/* Show the dropdown menu on hover */
+.menu__dropdown:hover .menu__dropdown-content {
+  display: block;
+}
+
+/*Navigator element*/
+.navigator__ul {
+  padding: 5% 0% 5px 0px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 2;
+}
+.navigator__ul li {
+  font-family: manrope;
+  list-style: none;
+}
+.navigator__ul li a {
+  color: rgb(211, 204, 204);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: rgb(136, 130, 130);
+}
+
+/*Index.html main*/
+.main__content--index {
+  display: grid;
+  width: 100%;
+  background-color: rgb(65, 7, 108);
+}
+
+@media (max-width: 800px) {
+  .main__content--index {
+    grid-template-areas: "title title title title credit" "video video video video playing" "search search search search search" "filt filt filt filt filt" "results results results results results" "selector selector qr qr play";
+    grid-template-rows: 200px 200px 200px 200px 360px auto;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (min-width: 801px) {
+  .main__content--index {
+    grid-template-areas: "title title title title credit" "video video playing search search" "video video playing filt filt" "results results results results results" ". visor visor visor ." "selector selector qr qr play";
+    grid-template-rows: 200px 110px 90px 360px 100px auto;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.index__main--title {
+  grid-area: title;
+  padding-top: 50px;
+  height: 200px;
+}
+.index__main--title h1 {
+  display: flex;
+  justify-content: center;
+  color: snow;
+}
+.index__main--title h5 {
+  display: flex;
+  justify-content: center;
+  padding-left: 200px;
+  color: snow;
+}
+
+.index__main--balance {
+  grid-area: credit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: snow;
+}
+
+.index__playing--video {
+  grid-area: video;
+  display: flex;
+  box-sizing: border-box;
+  justify-self: center;
+  align-self: center;
+}
+
+@media (max-width: 800px) {
+  .index__playing--video iframe {
+    width: 227px;
+    height: 128px;
+  }
+}
+@media (min-width: 801px) {
+  .index__playing--video iframe {
+    width: 315px;
+    height: 177px;
+  }
+}
+.index__playing--songdata {
+  grid-area: playing;
+  display: grid;
+  grid-template-areas: "nowp nowp" "star songi";
+  padding-top: 25%;
+  grid-template-rows: 30% 30%;
+  grid-template-columns: 1fr 4fr;
+  color: snow;
+}
+
+.index__playing--nowp {
+  grid-area: nowp;
+  align-items: center;
+}
+
+.index__playing--star {
+  grid-area: star;
+  width: 30px;
+  height: 30px;
+}
+
+#index__playing--artist {
+  grid-area: songi;
+  align-self: center;
+}
+#index__playing--artist .animate__animated.animate__backInRight {
+  --animate-duration: 2s;
+}
+
+.index__main--search {
+  grid-area: search;
+}
+.index__main--search p {
+  color: snow;
+}
+
+.index__search--button {
+  margin-left: 10px;
+  padding: 5px;
+}
+.index__search--button a {
+  color: black;
+  text-decoration: none;
+}
+
+.index__search--lookup {
+  display: flex;
+}
+
+.index__search--filtericon {
+  width: 25px;
+  height: 25px;
+}
+
+.index__filter {
+  grid-area: filt;
+}
+
+.index__filter--flex {
+  display: flex;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px;
+  background-color: rgb(23, 7, 73);
+  color: rgb(211, 204, 204);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.tag .close {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/*Más excuchados*/
+.index__main--results {
+  grid-area: results;
+  display: grid;
+  grid-template-areas: "first-li first-li first-li first-li first-li" "flecha-l e1 e2 e3 flecha-r";
+  grid-template-rows: 55px 305px 100px;
+  grid-template-columns: 11% 26% 26% 26% 11%;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  background-color: rgb(65, 7, 108);
+}
+
+.results--firstli {
+  grid-area: first-li;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  color: snow;
+}
+
+.results--title {
+  padding: 15px;
+}
+
+.results--viewicon img {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+
+.results__elements--arrowl {
+  grid-area: flecha-l;
+  display: flex;
+  justify-self: right;
+  align-self: center;
+}
+
+.results__arrowl--img {
+  width: 35px;
+  height: 35px;
+}
+
+/*Element 1*/
+.results__elements--e1 {
+  grid-area: e1;
+  display: grid;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  background-image: linear-gradient(to bottom, black, rgb(57, 57, 57));
+  display: grid;
+  grid-template-areas: "song-image" "song-title" "song-artist" "song-year" "checkbox";
+  grid-template-rows: 10fr 2fr 2fr 2fr 1fr;
+}
+
+@media (max-width: 800px) {
+  .elements--song-image {
+    grid-area: song-image;
+  }
+  .elements--song-image img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (min-width: 801px) and (max-width: 1200px) {
+  .elements--song-image {
+    grid-area: song-image;
+  }
+  .elements--song-image img {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (min-width: 1201px) {
+  .elements--song-image {
+    grid-area: song-image;
+  }
+  .elements--song-image img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.element__song-title {
+  grid-area: song-title;
+  color: snow;
+}
+
+.element__song-artist {
+  grid-area: song-artist;
+  color: snow;
+}
+
+.element__year {
+  grid-area: song-year;
+  color: snow;
+}
+
+.element__checkbox {
+  grid-area: checkbox;
+  display: flex;
+  justify-content: right;
+}
+
+/*Element 2*/
+.results__elements--e2 {
+  grid-area: e2;
+  display: grid;
+  background-image: linear-gradient(to bottom, black, rgb(57, 57, 57));
+  box-sizing: border-box;
+  padding: 5px 10px;
+  display: grid;
+  grid-template-areas: "song-image" "song-title" "song-artist" "song-year" "checkbox";
+  grid-template-rows: 10fr 2fr 2fr 2fr 1fr;
+}
+
+/*Element 3*/
+.results__elements--e3 {
+  grid-area: e3;
+  display: grid;
+  background-image: linear-gradient(to bottom, black, rgb(57, 57, 57));
+  box-sizing: border-box;
+  padding: 5px 10px;
+  display: grid;
+  grid-template-areas: "song-image" "song-title" "song-artist" "song-year" "checkbox";
+  grid-template-rows: 10fr 2fr 2fr 2fr 1fr;
+}
+
+.results__elements--arrowr {
+  grid-area: flecha-r;
+  display: flex;
+  justify-self: left;
+  align-self: center;
+}
+
+.results__arrowr--img {
+  width: 35px;
+  height: 35px;
+}
+
+/*Selector*/
+.index__main--selector {
+  grid-area: selector;
+  display: flex;
+}
+
+.index__selector--container {
+  display: grid;
+  height: 200px;
+  width: 250px;
+  justify-self: center;
+  align-self: center;
+  grid-template-areas: "legend legend legend" "option-1 toggle option-2";
+}
+
+.index__selector--legend {
+  grid-area: legend;
+  color: snow;
+  justify-self: center;
+  align-self: center;
+}
+
+.selector__option--1 {
+  grid-area: option-1;
+  color: snow;
+  justify-self: center;
+}
+
+.switch {
+  grid-area: toggle;
+  justify-self: center;
+}
+
+.selector__option--2 {
+  grid-area: option-2;
+  color: snow;
+  justify-self: center;
+}
+
+main .selector div .toggle-selector {
+  width: 180px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: snow;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(211, 204, 204);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(65, 7, 108);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(211, 204, 204);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(211, 204, 204);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*QR scan*/
+.index__main--qr {
+  height: 200px;
+  width: 200px;
+  grid-area: qr;
+  display: flex;
+  padding-top: 60px;
+}
+
+.index__qr--img {
+  grid-area: qr-img;
+  justify-items: center;
+  align-items: center;
+  display: flex;
+}
+.index__qr--img img {
+  height: 80px;
+  width: 80px;
+  justify-items: center;
+  padding: 10px;
+}
+
+.index__qr--text {
+  color: snow;
+  padding: 10px;
+}
+
+/*Play section*/
+.index__main--play {
+  grid-area: play;
+  display: flex;
+}
+.index__main--play img {
+  justify-self: center;
+  align-self: center;
+  height: 120px;
+  width: 120px;
+}
+
+/*Services.html */
+@media (max-width: 800px) {
+  .services__main {
+    display: grid;
+    grid-template-areas: "serv-title" "headphones" "serv-p1" "serv-p2" "serv-p3" "serv-p4";
+  }
+}
+@media (min-width: 801px) and (max-width: 1200px) {
+  .services__main {
+    display: grid;
+    grid-template-areas: "serv-title serv-title" "headphones headphones" "serv-p1 serv-p2" "serv-p3 serv-p4";
+  }
+}
+@media (min-width: 1201px) {
+  .services__main {
+    display: grid;
+    grid-template-areas: "serv-title serv-title headphones" "serv-p1 serv-p2 headphones" "serv-p3 serv-p4 headphones";
+    grid-template-columns: 30% 30% 40%;
+  }
+}
+.services__main--title {
+  grid-area: serv-title;
+  justify-self: center;
+  padding-top: 10px;
+}
+
+.services__main--p1 {
+  grid-area: serv-p1;
+  padding: 20%;
+}
+
+.services__main--p2 {
+  grid-area: serv-p2;
+  padding: 20%;
+}
+
+.services__main--p3 {
+  grid-area: serv-p3;
+  padding: 20%;
+}
+
+.services__main--p4 {
+  grid-area: serv-p4;
+  padding: 20%;
+}
+
+.services__headphones--pic {
+  grid-area: headphones;
+  padding: 20%;
+  transform: rotate(-8deg);
+}
+
+/*Contacto */
+.contacto__main--title {
+  padding-top: 10px;
+}
+
+.contacto__form--nombre {
+  padding-top: 20px;
+}
+
+.contacto__form--nombre, .contacto__form--apellido, .contacto__form--email, .contacto__form--telefono, .contacto__form--mensaje {
+  padding: 10px 5px;
+}
+
+.contacto__form--mensaje {
+  padding-bottom: 20px;
+}
+
+.contact__space {
+  height: 320px;
+}
+
+.contact__submit--button {
+  margin-left: 260px;
+  padding: 5px;
+}
+
+/*Ingreso*/
+.ingreso__main--title {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.ingreso__form--email {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.ingreso__form--password {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.ingreso__login--forgot {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+.ingreso__login--button {
+  margin-left: 240px;
+  padding: 5px;
+}
+
+.ingreso__space {
+  height: 320px;
+}
+
+/*Registrarse*/
+.registrarse__title {
+  padding: 10px;
+}
+
+.registrarse__text {
+  padding-left: 10px;
+}
+
+.registrarse__form--nombre, .registrarse__form--apellido, .registrarse__form--email, .registrarse__form--pais, .registrarse__form--estado, .registrarse__form--direccion, .registrarse__form--cp, .registrarse__form--password, .registrarse__form--confirmarpassword {
+  padding: 10px;
+}
+
+.registrarse__register-button {
+  margin-left: 220px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.registrarse__login-link {
+  margin: 10px;
+}/*# sourceMappingURL=style.css.map */

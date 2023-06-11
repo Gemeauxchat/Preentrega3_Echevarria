@@ -1,0 +1,32 @@
+/*Resets*/
+*{
+    margin:0px; padding:0px;
+}
+
+
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap');
+
+/*Layout*/
+@import "layout/layout";
+
+/*Header element- Verify header's menu icon displays in smaller viewports*/
+@import "components/header";
+
+/*Navigator element*/
+@import "components/navigator";
+
+/*Index.html main*/
+@import "pages/index-main";
+
+/*Services.html */
+@import "pages/servicio";
+
+/*Contacto */
+@import "pages/contacto";
+
+/*Ingreso*/
+@import "pages/ingreso";
+
+/*Registrarse*/
+@import "pages/registrarse";

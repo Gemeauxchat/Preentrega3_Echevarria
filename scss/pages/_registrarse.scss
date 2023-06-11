@@ -1,0 +1,23 @@
+$regularpadding:20px;
+
+.registrarse__title{
+    padding: $regularpadding / 2;
+}
+
+.registrarse__text{
+    padding-left: $regularpadding /2;
+}
+.registrarse__form--nombre, .registrarse__form--apellido, .registrarse__form--email, .registrarse__form--pais, .registrarse__form--estado, .registrarse__form--direccion, .registrarse__form--cp, .registrarse__form--password, .registrarse__form--confirmarpassword{
+    padding:$regularpadding /2;
+}
+
+.registrarse__register-button{
+    margin-left:220px;
+    margin-top:20px;
+    margin-bottom:10px;
+    padding:5px;
+
+}
+.registrarse__login-link{
+margin: 10px;
+}
